@@ -1,12 +1,12 @@
 const scoresURL =
-  "https://cors-anywhere.herokuapp.com/https://freepubtrivia.com/api/toc/variable-standings-by-bar/barId=294&scoreCutoff=4&standingsLimit=6&startTimeEpoch=1735694131&triviaType=theme";
+  "https://freepubtrivia.com/api/toc/variable-standings-by-bar/barId=294&scoreCutoff=4&standingsLimit=6&startTimeEpoch=1735694131&triviaType=theme";
 
 const calculateRankings = (scores) => {
   // console.log("Resecived Scores: ", scores)
   const validTeams = scores.filter((team) => team.totals.length > 1);
   const sortedTeams = validTeams.map((team) => {
     let highestTotal;
-    if (team.totals.length == 2) {
+    if (team.totals.length === 2) {
       highestTotal = team.totals.reduce(
         (partialSum, a) => parseInt(partialSum) + parseInt(a),
         0
