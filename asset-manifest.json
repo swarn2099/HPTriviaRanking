@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/HPTriviaRanking/static/css/main.15035c98.css",
-    "main.js": "/HPTriviaRanking/static/js/main.7f5d112d.js",
+    "main.js": "/HPTriviaRanking/static/js/main.724d0aa9.js",
     "static/media/background1.gif": "/HPTriviaRanking/static/media/background1.7e13192283c471245edf.gif",
     "index.html": "/HPTriviaRanking/index.html",
     "main.15035c98.css.map": "/HPTriviaRanking/static/css/main.15035c98.css.map",
-    "main.7f5d112d.js.map": "/HPTriviaRanking/static/js/main.7f5d112d.js.map"
+    "main.724d0aa9.js.map": "/HPTriviaRanking/static/js/main.724d0aa9.js.map"
   },
   "entrypoints": [
     "static/css/main.15035c98.css",
-    "static/js/main.7f5d112d.js"
+    "static/js/main.724d0aa9.js"
   ]
 }
