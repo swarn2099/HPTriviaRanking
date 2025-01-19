@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import RankingTable from "./components/RankingTable.tsx";
 import { getScores } from "./utils/utils.ts";
 import "./App.css";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Skeleton, Typography } from "@mui/material";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [scores, setScores] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const results = await getScores();
+        console.log("Results: ", results);
         setScores(results);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching scores:", error);
       }
@@ -91,7 +94,18 @@ function App() {
         >
           Current Standings
         </Typography>
-        <RankingTable data={scores} />
+
+        {isLoading ? (
+          <Skeleton
+            variant="rounded"
+            height={200}
+            style={{
+              backgroundColor: "#2c293d",
+            }}
+          />
+        ) : (
+          <RankingTable data={scores} />
+        )}
       </Container>
     </Box>
   );

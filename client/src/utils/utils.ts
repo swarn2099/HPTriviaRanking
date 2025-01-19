@@ -34,18 +34,24 @@ const calculateRankings = (scores) => {
 };
 
 const getMostRecentResults = async () => {
-  const scoresJSON = await fetch(scoresURL, {
-    mode: "no-cors",
-  })
+  const scoresJSON = await fetch(scoresURL)
     .then((response) => {
-      return response.json();
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json(); // Parse JSON directly
     })
     .catch((error) => {
       console.error("Error fetching scores: ", error);
+      return null; // Return null if fetch fails
     });
 
-  console.log(scoresJSON.slice(0, scoresJSON.length - 1).length);
+  if (!scoresJSON || scoresJSON.length === 0) {
+    console.error("No valid scores received from API.");
+    return [];
+  }
 
+  console.log("Scores Received:", scoresJSON);
   return scoresJSON.slice(0, scoresJSON.length - 1);
 };
 
