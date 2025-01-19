@@ -1,5 +1,5 @@
 const scoresURL =
-  "https://freepubtrivia.com/api/toc/variable-standings-by-bar/barId=294&scoreCutoff=4&standingsLimit=6&startTimeEpoch=1735694131&triviaType=theme";
+  "https://hptriviaserver-bea057036426.herokuapp.com/api/scores";
 
 const calculateRankings = (scores) => {
   // console.log("Resecived Scores: ", scores)
